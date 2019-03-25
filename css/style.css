@@ -133,8 +133,8 @@ ol {
 }
 
 .spad {
-    padding-top: 110px;
-    padding-bottom: 110px;
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 
 .text-white h1,
@@ -1054,6 +1054,22 @@ ol {
   Service Page
 ---------------------*/
 
+.obj-card {
+    padding: 50px;
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 30px;
+    text-align: center;
+}
+
+.obj-card ul {
+    list-style-type: none;
+}
+
+.obj-card p,
+h2 {
+    color: rgb(75, 75, 75);
+}
+
 .pricing-section {
     background-image: url("../img/pattern.png");
     background-repeat: repeat;
@@ -1145,7 +1161,7 @@ ol {
 }
 
 .post-content p {
-    margin-bottom: 45px;
+    /* margin-bottom: 45px; */
 }
 
 .post-content .site-btn {
