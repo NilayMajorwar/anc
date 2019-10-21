@@ -1827,13 +1827,13 @@ h2 {
 .blog-container .blog-card {
   box-shadow: 0 0 2px 0px rgba(0, 0, 0, 0.5);
   margin: 50px 0;
-  border-radius: 40px;
+  border-radius: 20px;
   overflow: hidden;
 }
 
 .blog-container .blog-card img {
   object-fit: cover;
-  height: 250px;
+  height: 300px;
   width: 100%;
 }
 
