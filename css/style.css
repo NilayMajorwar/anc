@@ -1831,6 +1831,24 @@ h2 {
   overflow: hidden;
 }
 
+.blog-post .blog-rdmr {
+  text-align: center;
+}
+
+.blog-post .blog-rdmr button {
+  border: 1px solid #004a75;
+  background: transparent;
+  padding: 20px 40px;
+  border-radius: 5px;
+  color: #004a75;
+  transition: all 0.1s ease-in-out;
+}
+
+.blog-post .blog-rdmr button:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 0px 1px 0px rgba(200, 200, 200, 0.5);
+}
+
 .blog-container .blog-card img {
   object-fit: cover;
   height: 300px;
