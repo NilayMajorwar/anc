@@ -1,0 +1,145 @@
+:root {
+    --blue: #028ada;
+    --darkblue: #0066a1;
+    /* --green: #8ab92d; */
+}
+
+html,
+body {
+    background: url('../img/login-bg.jpg') fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.overlay-bg {
+    /* position: relative; */
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.container {
+    height: 100%;
+    align-content: center;
+}
+
+.card {
+    /* height: 70%; */
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    border: 0;
+    border-radius: 50px;
+}
+
+.notice-section {
+    padding: 20px 30px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    border: 2px var(--darkblue) dashed;
+    background: #7fd0ff;
+}
+
+.notice-section p {
+    color: black;
+}
+
+.status-section {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.card-header {
+    background: var(--blue);
+    text-align: center;
+    border-top-left-radius: 50px !important;
+    border-top-right-radius: 50px !important;
+}
+
+.card-header h2 {
+    font-family: "Poppins", sans-serif;
+    color: rgb(255, 255, 255);
+    line-height: 1.2em;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.section-header {
+    background: var(--darkblue);
+    padding: .75rem 1.25rem;
+}
+
+.section-header h4 {
+    font-family: "Poppins", sans-serif;
+    color: rgb(255, 255, 255);
+}
+
+.card-body {
+    text-align: center;
+}
+
+.card-body .row {
+    height: 100%;
+}
+
+.pay-instr {
+    color: #000000;
+    padding: 20px 0px;
+    border-radius: 20px;
+    border: 1px solid var(--darkblue);
+    background: #7fd0ff;
+}
+
+.section-center .section-header {
+    background: #006faf;
+}
+
+.input-group-prepend span {
+    /* width: 50px; */
+    background-color: #028ada;
+    color: rgb(255, 255, 255);
+    border: 0 !important;
+}
+
+input:focus {
+    outline: 0 0 0 0 !important;
+    box-shadow: 0 0 0 0 !important;
+}
+
+.card-footer li {
+    text-align: center;
+}
+
+.card-footer {
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    border-bottom-left-radius: 50px !important;
+    border-bottom-right-radius: 50px !important;
+}
+
+.card-footer:hover {
+    background: rgba(165, 165, 165, 0.8);
+}
+
+.login_btn {
+    color: rgb(255, 255, 255);
+    background-color: #028ada;
+    width: 100px;
+}
+
+.login_btn:hover {
+    background-color: #0066a1;
+}
+
+.links {
+    color: rgb(59, 59, 59);
+}
+
+.links a {
+    margin-left: 4px;
+}
+
+.pay-section a {
+    color: white;
+}
