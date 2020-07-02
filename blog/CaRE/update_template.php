@@ -104,6 +104,9 @@
                 <main>
           <div class="centered">
             <form action="update.php" method="post" enctype="multipart/form-data">
+              <h3 style="float:left;margin-right: 10px">Password: </h3>
+              <input type="password" id="pass" name="pass" required>
+              <br/><br/>
               <h3 style="float:left;margin-right: 10px">Title: </h3>
               <input type="text" value="<?php echo $data->title?>" id="title" name="title" required>
               <br/><br/>
@@ -201,6 +204,7 @@
                 uploadUrl: 'https://anciitk.in/blog/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images&responseType=json'
             },
             mediaEmbed: {
+            	previewsInData: true,
                 toolbar: [
                   "mediaStyle:full",
                   "|",
@@ -209,7 +213,7 @@
                   "mediaStyle:alignRight",
                 ],
                 styles: ["full", "alignLeft", "alignCenter", "alignRight"]
-              },
+            },
       } )
       .then( editor => {
         window.editor = editor;
