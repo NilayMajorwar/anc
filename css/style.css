@@ -1914,3 +1914,46 @@ h2 {
 .blog .reflinks {
   padding: 10px 15px;
 }
+
+:root {
+	--ck-image-style-spacing: 1.5em;
+}
+
+.image-style-side,
+.image-style-align-left,
+.image-style-align-center,
+.image-style-align-right {
+	max-width: 50%;
+}
+
+.image-style-side {
+	float: right;
+	margin-left: var(--ck-image-style-spacing);
+}
+
+.image-style-align-left {
+	float: left;
+	margin-right: var(--ck-image-style-spacing);
+}
+
+.image-style-align-center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.image-style-align-right {
+	float: right;
+	margin-left: var(--ck-image-style-spacing);
+}
+
+blockquote {
+	overflow: hidden;
+
+	padding-right: 1.5em;
+	padding-left: 1.5em;
+
+	margin-left: 0;
+	margin-right: 0;
+	font-style: italic;
+	border-left: solid 5px hsl(0, 0%, 80%);
+}
