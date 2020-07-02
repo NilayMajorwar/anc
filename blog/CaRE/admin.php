@@ -41,6 +41,12 @@ if(isset($_FILES['cover']))
     fclose($myfile);
     fclose($update);
 
+    if(!is_dir(strval($last + 1) . "/update")){
+		mkdir(strval($last + 1) . "/update", 0777, true);
+	}
+	copy("update_template.php",strval($last + 1) . "/update/index.php");
+	copy("update.php",strval($last + 1) . "/update/update.php");
+
 } else {
 	echo "Please upload a Cover Photo!";
 }

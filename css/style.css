@@ -1957,3 +1957,46 @@ blockquote {
 	font-style: italic;
 	border-left: solid 5px hsl(0, 0%, 80%);
 }
+
+.text-tiny {
+    font-size: 0.7em;
+}
+
+.text-small {
+    font-size: 0.85em;
+}
+
+.text-big {
+    font-size: 1.4em;
+}
+
+.text-huge {
+    font-size: 1.8em;
+}
+
+.media-style-side,
+.media-style-align-left,
+.media-style-align-center,
+.media-style-align-right {
+  width: 60%;
+}
+
+.media-style-side {
+  float: right;
+  margin-left: var(--ck-media-style-spacing) !important;
+}
+
+.media-style-align-left {
+  float: left;
+  margin-right: var(--ck-media-style-spacing) !important;
+}
+
+.media-style-align-center {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.media-style-align-right {
+  float: right;
+  margin-left: var(--ck-media-style-spacing) !important;
+}

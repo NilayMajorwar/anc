@@ -6,7 +6,6 @@
     $data_json = fread($myfile, filesize("data.json"));
     $data = json_decode($data_json);
     fclose($myfile);
-  }
 ?>
 <!DOCTYPE html>
 <html lang="zxx" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
@@ -145,3 +144,4 @@
 </body>
 
 </html>
+<?php } ?>
