@@ -1,3 +1,11 @@
+<?php
+$myfile = fopen("admin.json", "r");
+$stat_raw = fread($myfile, filesize("admin.json"));
+$stat = json_decode($stat_raw);
+$last = $stat->last;
+fclose($myfile);
+?>
+
 <!DOCTYPE html>
 <html
   lang="zxx"
@@ -19,7 +27,7 @@
 
       gtag('config', 'UA-141882297-1');
     </script>
-    <title>Blog | The More You Know | AnC Council, IITK</title>
+    <title>Blogs | CaRE-Career in Research | AnC Council, IITK</title>
     <meta charset="UTF-8" />
     <meta
       name="description"
@@ -110,11 +118,35 @@
           <h2>CaRE-Career in Research</h2>
           <hr />
         </div>
-    <div class="blog-post">
+        
           <div class="row">
             <div class="col-lg-10 offset-lg-1">
-              <div class="blog-container">    
-        <div class="blog-card">
+              <div class="blog-container">
+
+                <?php
+                  for ($x = 5; $x <= $last; $x++) {
+                  $data_file = fopen(strval($x)."/data.json", "r");
+                  $data_raw = fread($data_file, filesize(strval($x)."/data.json"));
+                  $data = json_decode($data_raw);
+                  fclose($data_file);
+                ?>
+                  <div class="blog-card">
+                    <img src="<?php echo $x;?>/img/cover.png" />
+                    <div class="blog-body">
+                      <h2>
+                        <?php echo $data->title?>
+                      </h2>
+                      <span class="author"><?php echo $data->author?></span>
+                      <p class="date"><?php echo $data->date?></p>
+                      <p class="description">
+                        <?php echo $data->intro?>
+                      </p>
+                      <button><a href="<?php echo $x?>">Read >></a></button>
+                    </div>
+                  </div>                
+                <?php } ?>
+
+                <div class="blog-card">
                   <img src="4/img/cover.jpg" />
                   <div class="blog-body">
                     <h2>
@@ -128,14 +160,8 @@
                     <button><a href="4">Read >></a></button>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-    <div class="blog-post">
-          <div class="row">
-            <div class="col-lg-10 offset-lg-1">
-              <div class="blog-container">    
-        <div class="blog-card">
+               
+                <div class="blog-card">
                   <img src="3/img/cover.jpg" />
                   <div class="blog-body">
                     <h2>
@@ -149,14 +175,8 @@
                     <button><a href="3">Read >></a></button>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-		<div class="blog-post">
-          <div class="row">
-            <div class="col-lg-10 offset-lg-1">
-              <div class="blog-container">		
-				<div class="blog-card">
+              		
+				        <div class="blog-card">
                   <img src="2/img/cover.jpg" />
                   <div class="blog-body">
                     <h2>
@@ -170,14 +190,8 @@
                     <button><a href="2">Read >></a></button>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="blog-post">
-          <div class="row">
-            <div class="col-lg-10 offset-lg-1">
-              <div class="blog-container">    
-        <div class="blog-card">
+    
+                <div class="blog-card">
                   <img src="1/img/cover.jpg" />
                   <div class="blog-body">
                     <h2>
@@ -195,11 +209,7 @@
             </div>
           </div>
         </div>
-        </div>
 
-        
-        </div>
-      </div>
     </section>
     <!-- Services section end -->
 

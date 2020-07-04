@@ -87,7 +87,7 @@
   <!-- Header section end -->
 
   <!-- Page Top section -->
-  <section class="page-top-section set-bg" data-setbg="../../../img/page-top-bg/6.jpg">
+  <section class="page-top-section set-bg" data-setbg="../../../../img/page-top-bg/6.jpg">
     <div class="container hero-title">
       <h2>Update Blog</h2>
     </div>
@@ -112,6 +112,9 @@
               <br/><br/>
               <h3 style="float:left;margin-right: 10px">Date: </h3>
               <input type="text" value="<?php echo $data->date?>" id="date" name="date" placeholder="Eg: Jul 01, 2020" required>
+              <br/><br/>
+              <h3 style="float:left;margin-right: 10px">Author: </h3>
+              <input type="text" value="<?php echo $data->author?>" id="author" name="author" required>
               <br/><br/>
               <h3 style="float:left;margin-right: 10px">Intro: </h3>
               <textarea id="intro" name="intro" rows="4" cols="30" required><?php echo $data->intro?></textarea>

@@ -1,3 +1,11 @@
+<?php
+$myfile = fopen("admin.json", "r");
+$stat_raw = fread($myfile, filesize("admin.json"));
+$stat = json_decode($stat_raw);
+$last = $stat->last;
+fclose($myfile);
+?>
+
 <!DOCTYPE html>
 <html
   lang="zxx"
@@ -19,7 +27,7 @@
 
       gtag('config', 'UA-141882297-1');
     </script>
-    <title>Blog | The More You Know | AnC Council, IITK</title>
+    <title>Blogs | The More You Know | AnC Council, IITK</title>
     <meta charset="UTF-8" />
     <meta
       name="description"
@@ -110,10 +118,35 @@
           <h2>The More You Know</h2>
           <hr />
         </div>
-        <div class="row">
-          <div class="col-lg-10 offset-lg-1">
-            <div class="blog-container">
-              <div class="blog-card">
+        
+          <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+              <div class="blog-container">
+
+                <?php
+                  for ($x = 11; $x <= $last; $x++) {
+                  $data_file = fopen(strval($x)."/data.json", "r");
+                  $data_raw = fread($data_file, filesize(strval($x)."/data.json"));
+                  $data = json_decode($data_raw);
+                  fclose($data_file);
+                ?>
+                  <div class="blog-card">
+                    <img src="<?php echo $x;?>/img/cover.png" />
+                    <div class="blog-body">
+                      <h2>
+                        <?php echo $data->title?>
+                      </h2>
+                      <span class="author"><?php echo $data->author?></span>
+                      <p class="date"><?php echo $data->date?></p>
+                      <p class="description">
+                        <?php echo $data->intro?>
+                      </p>
+                      <button><a href="<?php echo $x?>">Read >></a></button>
+                    </div>
+                  </div>                
+                <?php } ?>
+
+                <div class="blog-card">
                 <img src="10/vt.png" />
                 <div class="blog-body">
                   <h2>
@@ -128,13 +161,7 @@
                   <button><a href="10/index.html">Read >></a></button>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-    <div class="blog-post">
-          <div class="row">
-            <div class="col-lg-10 offset-lg-1">
-              <div class="blog-container">
+    
                 <div class="blog-card">
                   <img src="9/img/cover.png" />
                   <div class="blog-body">
@@ -149,13 +176,7 @@
                     <button><a href="9">Read >></a></button>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-    <div class="blog-post">
-          <div class="row">
-            <div class="col-lg-10 offset-lg-1">
-              <div class="blog-container">
+
                 <div class="blog-card">
                   <img src="7/img/cover.png" />
                   <div class="blog-body">
@@ -170,13 +191,7 @@
                     <button><a href="7">Read >></a></button>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-		<div class="blog-post">
-          <div class="row">
-            <div class="col-lg-10 offset-lg-1">
-              <div class="blog-container">
+
                 <div class="blog-card">
                   <img src="6/img/cover.png" />
                   <div class="blog-body">
@@ -191,13 +206,7 @@
                     <button><a href="6">Read >></a></button>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        <div class="blog-post">
-          <div class="row">
-            <div class="col-lg-10 offset-lg-1">
-              <div class="blog-container">
+       
                 <div class="blog-card">
                   <img src="5/Ayush.png" />
                   <div class="blog-body">
@@ -217,13 +226,7 @@
                     <button><a href="5/index.html">Read >></a></button>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        <div class="blog-post">
-          <div class="row">
-            <div class="col-lg-10 offset-lg-1">
-              <div class="blog-container">
+
                 <div class="blog-card">
                   <img src="4/as.png" />
                   <div class="blog-body">
@@ -238,29 +241,23 @@
                     <button><a href="4/index.html">Read >></a></button>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-		<div class="blog-post">
-          <div class="row">
-            <div class="col-lg-10 offset-lg-1">
-              <div class="blog-container">
+
                 <div class="blog-card">
-                <img src="3/img/cover.png" />
-                <div class="blog-body">
-                  <h2>
-                    The More You Know
-                  </h2>
-                  <span class="author">Parth Athale</span>
-                  <p class="date">April 15, 2020</p>
-                  <p class="description">
-                    First off, this piece is hugely influenced by my experiences and opinions. So the only person for whom this is perfect advice is the 2019 Parth. Don’t worry though, you’re closer to him than you think :P
-                  </p>
-                  <button><a href="3">Read >></a></button>
+                  <img src="3/img/cover.png" />
+                  <div class="blog-body">
+                    <h2>
+                      The More You Know
+                    </h2>
+                    <span class="author">Parth Athale</span>
+                    <p class="date">April 15, 2020</p>
+                    <p class="description">
+                      First off, this piece is hugely influenced by my experiences and opinions. So the only person for whom this is perfect advice is the 2019 Parth. Don’t worry though, you’re closer to him than you think :P
+                    </p>
+                    <button><a href="3">Read >></a></button>
+                  </div>
                 </div>
-              </div>
-				
-				<div class="blog-card">
+
+                <div class="blog-card">
                   <img src="2/img/cover.png" />
                   <div class="blog-body">
                     <h2>
@@ -274,8 +271,8 @@
                     <button><a href="2">Read >></a></button>
                   </div>
                 </div>
-				
-				<div class="blog-card">
+
+                <div class="blog-card">
                   <img src="1/img/cover.png" />
                   <div class="blog-body">
                     <h2>
@@ -293,9 +290,7 @@
             </div>
           </div>
         </div>
-        
-        </div>
-      </div>
+
     </section>
     <!-- Services section end -->
 

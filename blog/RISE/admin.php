@@ -24,6 +24,7 @@ if (isset($_POST["pass"])){
             $data->date = $_POST["date"];
             $data->intro = $_POST["intro"];
             $data->content = $_POST["content"];
+            $data->author = $_POST["author"];
             
             $myfile = fopen(strval($last + 1) . "/data.json", "w");
             $myJSON = json_encode($data);
